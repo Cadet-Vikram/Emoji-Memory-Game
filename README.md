@@ -1,12 +1,34 @@
-# React + Vite
+# 🎮 Emoji Memory Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fun and challenging memory game built with React and Tailwind CSS. Click on emojis without repeating — shuffle, remember, and beat your high score!
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 12 randomized emojis
+- Score and Best Score tracker
+- Game over on repeated click
+- Victory screen on completing all unique emojis
+- Fully responsive and styled with Tailwind CSS
 
-## Expanding the ESLint configuration
+## 🧠 How to Play
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Click each emoji only once.
+- Emojis shuffle after each click.
+- Don’t repeat any emoji.
+- Click all 12 unique emojis = You win!
+
+## 📦 Built With
+
+- React
+- Tailwind CSS
+- JSX + Functional Components
+
+## 🖥️ Live Demo
+
+https://68554b882182a35515735c45--courageous-biscotti-069472.netlify.app/
+
+
+
+---
+
+> Made with ❤️ by R VIKRAM AADHEERAN(https://github.com/your-username)
