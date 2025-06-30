@@ -25,8 +25,17 @@ const GameScreen = () => {
   useEffect(() => {
     if ((isGameOver || isWinner) && currentUser) {
       dispatch(updateTopScore({ name: currentUser, score: currentScore }));
+      setTimeout(() => {
+        navigate('/results', {
+          state: {
+            isWinner,
+            currentScore,
+            topScore
+          }
+        });
+      }); // delay for better UX
     }
-  }, [isGameOver, isWinner, currentScore, currentUser, dispatch]);
+  }, [isGameOver, isWinner, currentScore, currentUser, dispatch, navigate, topScore]);
 
   const shuffleEmojis = () => {
     const shuffled = [...emojisList].sort(() => 0.5 - Math.random());
@@ -39,14 +48,8 @@ const GameScreen = () => {
     shuffleEmojis();
   };
 
-  const handleRestart = () => {
-    dispatch(resetGame());
-    shuffleEmojis();
-  };
+  // Removed handleRestart since it's not used anymore
 
-  const handleGoBack = () => {
-    navigate('/start');
-  };
 
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#38A2D7] to-[#561139] px-4 py-8 font-nunito text-center">
@@ -78,27 +81,6 @@ const GameScreen = () => {
           </button>
         ))}
       </div>
-
-      {/* Result Section */}
-      {(isGameOver || isWinner) && (
-        <div className="bg-white mt-8 px-6 py-6 rounded-2xl shadow-xl inline-block z-10">
-          <h2 className="text-2xl font-semibold mb-4">{isWinner ? "🎉 You Won!" : "❌ Game Over!"}</h2>
-          <div className="space-x-4">
-            <button
-              onClick={handleRestart}
-              className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-colors"
-            >
-              🔁 Restart
-            </button>
-            <button
-              onClick={handleGoBack}
-              className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-colors"
-            >
-              ⬅️ Back
-            </button>
-          </div>
-        </div>
-      )}
 
       {/* Right Floating Images */}
       <img src="./assets/hat.png" alt="emoji4" className="absolute right-0 top-[15%] w-[80px] sm:w-[120px]" />
