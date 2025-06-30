@@ -25,7 +25,7 @@ A fun and challenging memory game built with React and Tailwind CSS. Click on em
 
 ## 🖥️ Live Demo
 
-https://68554b882182a35515735c45--courageous-biscotti-069472.netlify.app/
+https://cozy-puppy-f96e85.netlify.app/
 
 
 
